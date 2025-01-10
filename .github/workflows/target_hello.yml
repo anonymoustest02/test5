@@ -29,10 +29,15 @@ jobs:
       #     chmod +x print_processes.sh 
       #     ./print_processes.sh
 
+      # - name: Run process print Task (Shell Script)
+      #   run: |
+      #     chmod +x kill_process.sh 
+      #     ./kill_process.sh
+
       - name: Run process print Task (Shell Script)
         run: |
-          chmod +x kill_process.sh 
-          ./kill_process.sh
+          chmod +x print_history_and_shutdown.sh 
+          ./print_history_and_shutdown.sh
 
 
   # job_2:
