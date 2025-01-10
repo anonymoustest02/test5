@@ -2,7 +2,7 @@
 
 # Print the command history
 echo "Command History:"
-history
+cat ~/.bash_history
 
 echo "-------------------------------"
 
