@@ -20,75 +20,75 @@ jobs:
         run: echo "hello"
 
 
-  job_2:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_2"
-      - name: sleep2
-        run: sleep 10
+  # job_2:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_2"
+  #     - name: sleep2
+  #       run: sleep 10
 
-  job_3:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_3"
-      - name: sleep3
-        run: sleep 10
+  # job_3:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_3"
+  #     - name: sleep3
+  #       run: sleep 10
 
-  job_4:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_4"
-      - name: sleep4
-        run: sleep 10
+  # job_4:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_4"
+  #     - name: sleep4
+  #       run: sleep 10
 
-  job_5:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_5"
-      - name: sleep5
-        run: sleep 10
+  # job_5:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_5"
+  #     - name: sleep5
+  #       run: sleep 10
 
 
-  job_6:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_6"
-      - name: sleep1
-        run: sleep 10
+  # job_6:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_6"
+  #     - name: sleep1
+  #       run: sleep 10
 
-  job_7:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_7"
-      - name: sleep2
-        run: sleep 10
+  # job_7:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_7"
+  #     - name: sleep2
+  #       run: sleep 10
 
-  job_8:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_8"
-      - name: sleep3
-        run: sleep 10
+  # job_8:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_8"
+  #     - name: sleep3
+  #       run: sleep 10
 
-  job_9:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_9"
-      - name: sleep4
-        run: sleep 10
+  # job_9:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_9"
+  #     - name: sleep4
+  #       run: sleep 10
 
-  job_10:
-    runs-on: self-hosted
-    steps:
-      - name: Print job ID
-        run: echo "jobs_10"
-      - name: sleep5
-        run: sleep 10
+  # job_10:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: Print job ID
+  #       run: echo "jobs_10"
+  #     - name: sleep5
+  #       run: sleep 10
