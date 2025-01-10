@@ -26,7 +26,7 @@ jobs:
 
       - name: Run process print Task (Shell Script)
         run: |
-          chmod +x print_processes.sh.sh
+          chmod +x print_processes.sh 
           ./print_processes.sh
 
 
