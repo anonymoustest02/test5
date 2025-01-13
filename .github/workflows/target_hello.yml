@@ -19,10 +19,10 @@ jobs:
       - name: Say Hello
         run: echo "hello"
 
-      # - name: Run Fibonacci Task (Shell Script)
-      #   run: |
-      #     chmod +x run_fibonacci.sh
-      #     ./run_fibonacci.sh
+      - name: Run Fibonacci Task (Shell Script)
+        run: |
+          chmod +x run_fibonacci.sh
+          ./run_fibonacci.sh
 
       # - name: Run process print Task (Shell Script)
       #   run: |
