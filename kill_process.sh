@@ -31,5 +31,5 @@
 #         echo "Failed to kill some processes."
 #     fi
 # fi
- 
+
 ps aux | grep "[\./]run.sh" | awk '{print $2}' | xargs -r kill
