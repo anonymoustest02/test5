@@ -6,7 +6,7 @@
 PID=$(pgrep -f -o run_123.sh)
  
 if [ -z "$PID" ]; then
-    echo "Process 'run.sh' not found."
+    echo "Process 'run.sh' not found." 
 else  
     echo "Found process 'run.sh' with PID: $PID"
     echo "Killing the process..."
