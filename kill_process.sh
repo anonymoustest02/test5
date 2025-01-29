@@ -6,7 +6,7 @@
 
 # if [ -z "$PID" ]; then
 #     echo "Process 'python3 sleep.py' not found."
-# else
+# else 
 #     echo "Found process 'python3 sleep.py' with PID: $PID"
 #     echo "Killing the process..."
 #     kill "$PID"
