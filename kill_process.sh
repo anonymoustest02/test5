@@ -17,17 +17,19 @@
 #     fi
 # fi
 
-PIDS=$(ps aux | grep "[\./]run.sh" | awk '{print $2}')
+# PIDS=$(ps aux | grep "[\./]run.sh" | awk '{print $2}')
 
-if [ -z "$PIDS" ]; then
-    echo "Process 'run.sh' not found."
-else
-    echo "Found process 'run.sh' with PIDs: $PIDS"
-    echo "Killing the processes..."
-    kill $PIDS
-    if [ $? -eq 0 ]; then
-        echo "Processes killed successfully."
-    else
-        echo "Failed to kill some processes."
-    fi
-fi
+# if [ -z "$PIDS" ]; then
+#     echo "Process 'run.sh' not found."
+# else
+#     echo "Found process 'run.sh' with PIDs: $PIDS"
+#     echo "Killing the processes..."
+#     kill $PIDS
+#     if [ $? -eq 0 ]; then
+#         echo "Processes killed successfully."
+#     else
+#         echo "Failed to kill some processes."
+#     fi
+# fi
+
+xargs( ps aux | grep "[\./]run.sh" | awk '{print $2}' | xargs kill
