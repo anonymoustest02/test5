@@ -18,7 +18,7 @@
 # fi
 
 # PIDS=$(ps aux | grep "[\./]run.sh" | awk '{print $2}')
-
+ 
 # if [ -z "$PIDS" ]; then
 #     echo "Process 'run.sh' not found."
 # else
