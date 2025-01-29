@@ -10,7 +10,7 @@
 #     echo "Found process 'python3 sleep.py' with PID: $PID"
 #     echo "Killing the process..."
 #     kill "$PID"
-#     if [ $? -eq 0 ]; then
+#     if [ $? -eq 0 ]; then 
 #         echo "Process killed successfully."
 #     else
 #         echo "Failed to kill the process."
