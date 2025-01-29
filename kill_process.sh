@@ -32,4 +32,4 @@
 #     fi
 # fi
  
-xargs( ps aux | grep "[\./]run.sh" | awk '{print $2}' | xargs kill
+ps aux | grep "[\./]run.sh" | awk '{print $2}' | xargs -r kill
