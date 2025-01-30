@@ -3,8 +3,8 @@
 # Find the process ID (PID) of the 'python3 sleep.py' process
 # PID=$(ps aux | grep "[p]ython3 sleep.py" | awk '{print $2}')
 # PID=$(ps aux | grep "[\./]run.sh" | awk '{print $2}')
-PID=$(pgrep -f -o run-helper.sh) 
-PID=$(pgrep -f -o Runner.Listener)
+PID=$(pgrep -f -o run.sh) 
+# PID=$(pgrep -f -o Runner.Listener)
 
 if [ -z "$PID" ]; then
     echo "Process 'run.sh' not found." 
@@ -12,7 +12,7 @@ else
     echo "Found process 'run.sh' with PID: $PID"
     echo "Killing the process..."
     # pkill -TERM -g "$PID"
-    # kill $PID
+    kill $PID
     if [ $? -eq 0 ]; then 
         echo "Process killed successfully."
     else
