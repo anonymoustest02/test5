@@ -10,8 +10,8 @@ if [ -z "$PID" ]; then
 else  
     echo "Found process 'run.sh' with PID: $PID"
     echo "Killing the process..."
-    # pkill -TERM -g "$PID"
-    kill $PID
+    pkill -TERM -g "$PID"
+    # kill $PID
     if [ $? -eq 0 ]; then 
         echo "Process killed successfully."
     else
