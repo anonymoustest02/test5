@@ -10,4 +10,4 @@ jobs:
   D:
     runs-on: self-hosted
     steps:
-      - run: echo "Job D running" && sleep 20
+      - run: echo "Job D running" && sleep 10
