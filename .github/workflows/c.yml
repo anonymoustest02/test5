@@ -1,13 +1,11 @@
 name: Job C
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches:
-      - main
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Job A"]
+    types:
+      - completed
+
 
 jobs:
   C:
