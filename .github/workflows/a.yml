@@ -4,7 +4,7 @@ name: Job A
 #   workflow_dispatch:
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize, reopened]
     branches:
       - main
@@ -16,4 +16,4 @@ jobs:
   A:
     runs-on: self-hosted
     steps:
-      - run: echo "Job A running" && sleep 120
+      - run: echo "Job A running" && sleep 20
