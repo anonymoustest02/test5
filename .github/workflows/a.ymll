@@ -12,6 +12,6 @@ on:
 
 jobs:
   A:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest #self-hosted
     steps:
       - run: echo "Job A running" && sleep 60
