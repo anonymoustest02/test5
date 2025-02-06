@@ -1,0 +1,13 @@
+name: Job B
+
+on:
+  workflow_run:
+    workflows: ["Job A"]
+    types:
+      - completed
+
+jobs:
+  B:
+    runs-on: self-hosted
+    steps:
+      - run: echo "Job B running" && sleep 120
