@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  E:
+  C:
     runs-on: self-hosted
     steps:
-      - run: echo "Job C running" && sleep 60
+      - run: echo "Job C running" && sleep 30
