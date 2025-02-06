@@ -1,24 +1,18 @@
 name: Job C
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches:
-      - main
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Job A"]
+    types:
+      - completed
 
 jobs:
   C:
     runs-on: self-hosted
     steps:
-      - run: echo "Job C running" && sleep 3
+      - run: echo "Job C running" && sleep 10
        
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Fibonacci Task (Shell Script)
-        run: |
-          chmod +x run_fibonacci.sh
-          ./run_fibonacci.sh
+     
