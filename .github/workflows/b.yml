@@ -10,7 +10,7 @@ jobs:
   B:
     runs-on: self-hosted
     steps:
-      - run: echo "Job B running" && sleep 10
+      - run: echo "Job B running" && sleep 3
 
       # - name: Checkout code
       #   uses: actions/checkout@v3
