@@ -26,7 +26,7 @@ jobs:
  
       - name: Run Fibonacci Task (Shell Script)
         run: |
-          chmod +x run_fibonacci.sh
+          chmod +x run_fibonacci_2.sh
           ./run_fibonacci.sh
 
   job_2:
