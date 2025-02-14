@@ -19,7 +19,7 @@ jobs:
       - run: echo "Job A running" && sleep 4
 
   job_1:
-    runs-on:  arc-runner-set  #ubuntu-latest
+    runs-on:  self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
           ./run_fibonacci.sh
 
   job_2:
-    runs-on: arc-runner-set
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
