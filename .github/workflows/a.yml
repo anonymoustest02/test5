@@ -19,7 +19,9 @@ jobs:
       - run: echo "Job A running" && sleep 4
       
       - name: Set ENV from Repo Secret
-        run: echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
+        run: 
+          # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
+          echo "MY_SECRET=my_value" >> ~/.bashrc
 
       - name: Use the ENV Variable
         run: |
