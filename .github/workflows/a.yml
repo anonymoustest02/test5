@@ -17,6 +17,12 @@ jobs:
     runs-on: self-hosted
     steps:
       - run: echo "Job A running" && sleep 4
+      
+      - name: Set ENV from Repo Secret
+        run: echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
+
+      - name: Use the ENV Variable
+        run: echo "The secret is $MY_SECRET"
 
   # job_1:
   #   runs-on:  self-hosted
