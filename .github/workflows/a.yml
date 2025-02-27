@@ -16,7 +16,7 @@ jobs:
   A:
     runs-on: self-hosted
     steps:
-      - run: echo "Job A running" && sleep 4
+      - run: echo "Job A running" && sleep 3
       
       - name: Set ENV from Repo Secret
         run: |
@@ -29,6 +29,10 @@ jobs:
       - name: show the ENV Variable
         run: |
           echo $MY_SECRET
+
+      - name: show the ENV Variable2
+        run: |
+          printenv
 
       # - name: History
       #   run:  |
