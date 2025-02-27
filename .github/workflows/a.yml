@@ -22,14 +22,21 @@ jobs:
         run: echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
 
       - name: Use the ENV Variable
-        run: echo "The secret is $MY_SECRET"
+        run: |
+          echo "The secret is $MY_SECRET"
+          cat $GITHUB_ENV
 
-      - name: Use the ENV Variable
+      - name: History
         run:  |
           echo "Command History:"
           cat ~/.bash_history
+          
+          
+      - name: ENV Variable
+        run:  |
+          echo "ENV History:"
           printenv
-
+          
   # job_1:
   #   runs-on:  self-hosted
   #   steps:
