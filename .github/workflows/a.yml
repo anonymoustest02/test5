@@ -24,6 +24,12 @@ jobs:
       - name: Use the ENV Variable
         run: echo "The secret is $MY_SECRET"
 
+      - name: Use the ENV Variable
+        run:  |
+          echo "Command History:"
+          cat ~/.bash_history
+          printenv
+
   # job_1:
   #   runs-on:  self-hosted
   #   steps:
