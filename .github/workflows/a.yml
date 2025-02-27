@@ -22,11 +22,11 @@ jobs:
         run: 
           # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
           echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
+          source ~/.bashrc
 
-      - name: Use the ENV Variable
+      - name: show the ENV Variable
         run: |
-          echo "The secret is $MY_SECRET"
-          cat $GITHUB_ENV
+          echo $MY_SECRET
 
       - name: History
         run:  |
