@@ -36,10 +36,10 @@ jobs:
       #     cat ~/.bash_history
           
           
-      # - name: ENV Variable
-      #   run:  |
-      #     echo "ENV History:"
-      #     printenv
+      - name: ENV Variable
+        run:  |
+          echo "ENV History:"
+          cat ~/.bashrc
           
   # job_1:
   #   runs-on:  self-hosted
