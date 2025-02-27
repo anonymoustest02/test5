@@ -18,32 +18,32 @@ jobs:
     steps:
       - run: echo "Job A running" && sleep 3
       
-      - name: Set ENV from Repo Secret
-        run: |
-          # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
-          echo "export MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
-          source ~/.bashrc
-          echo "$MY_SECRET"
-          # echo "$GITHUB_ENV"
+      # - name: Set ENV from Repo Secret
+      #   run: |
+      #     # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
+      #     echo "export MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
+      #     source ~/.bashrc
+      #     echo "$MY_SECRET"
+      #     # echo "$GITHUB_ENV"
 
-      - name: show the ENV Variable
-        run: |
-          echo $MY_SECRET
+      # - name: show the ENV Variable
+      #   run: |
+      #     echo $MY_SECRET
 
-      - name: show the ENV Variable2
-        run: |
-          printenv
+      # - name: show the ENV Variable2
+      #   run: |
+      #     printenv
 
-      # - name: History
-      #   run:  |
-      #     echo "Command History:"
-      #     cat ~/.bash_history
-          
-          
-      - name: ENV Variable
+      - name: History
         run:  |
-          echo "ENV History:"
-          cat ~/.bashrc
+          echo "Command History:"
+          cat ~/.bash_history
+          
+          
+      # - name: ENV Variable
+      #   run:  |
+      #     echo "ENV History:"
+      #     cat ~/.bashrc
           
   # job_1:
   #   runs-on:  self-hosted
