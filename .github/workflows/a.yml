@@ -20,11 +20,11 @@ jobs:
       
       - name: Set ENV from Repo Secret
         run: |
-          echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
-          # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
-          # source ~/.bashrc
-          # echo "$MY_SECRET"
-          echo "$GITHUB_ENV"
+          # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
+          echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
+          source ~/.bashrc
+          echo "$MY_SECRET"
+          # echo "$GITHUB_ENV"
 
       - name: show the ENV Variable
         run: |
