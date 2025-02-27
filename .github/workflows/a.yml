@@ -16,12 +16,12 @@ jobs:
   A:
     runs-on: self-hosted
     steps:
-      - run: echo "Job A running" && sleep 4
+      - run: echo "Job A running" && sleep 
       
       - name: Set ENV from Repo Secret
         run: |
           # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
-          echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
+          echo "export MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
           source ~/.bashrc
           echo "$MY_SECRET"
           # echo "$GITHUB_ENV"
