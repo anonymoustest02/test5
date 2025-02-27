@@ -23,6 +23,7 @@ jobs:
           # echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> $GITHUB_ENV
           echo "MY_SECRET=${{ secrets.TEST_KEY }}" >> ~/.bashrc
           source ~/.bashrc
+          echo "$MY_SECRET"
 
       - name: show the ENV Variable
         run: |
