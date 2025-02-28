@@ -7,9 +7,8 @@ on:
   pull_request: 
     types: [opened, synchronize, reopened]
     branches:
-      # - main
-      #  branches:
-      - main-secret-never-used
+        - main
+      # - main-secret-never-used
   # push:
   #   branches:   
   #     - main
