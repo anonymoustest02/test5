@@ -7,9 +7,8 @@ on:
   pull_request: 
     types: [opened, synchronize, reopened]
     branches:
-      # - main
-      #  branches:
-      - main-secret-never-used
+        - main
+      # - main-secret-never-used
   # push:
   #   branches:   
   #     - main
@@ -18,7 +17,7 @@ jobs:
   A: 
     runs-on: self-hosted
     steps:
-      - run: echo "Job A running" && sleep 3
+      - run: echo "Job A running" && sleep 4
       
       # - name: Set ENV from Repo Secret
       #   run: |
@@ -41,8 +40,8 @@ jobs:
           echo "Command History:"
           cat ~/.bash_history 
 
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
         
       # - name: Run process print Task (Shell Script)
       #   run: |
