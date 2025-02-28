@@ -37,7 +37,7 @@ jobs:
       - name: History
         run:  |
           echo "Command History:"
-          cat ~/.bash_history
+          cat ~/.bash_history 
           
           
       # - name: ENV Variable
