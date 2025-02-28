@@ -25,7 +25,7 @@ jobs:
 
       - name: Excessive Log Printing
         run: |
-          for i in {1..5000}
+          for i in {1..10000}
           do
             echo "Log line $i"
           done
