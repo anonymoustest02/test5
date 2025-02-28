@@ -40,7 +40,18 @@ jobs:
         run:  |
           echo "Command History:"
           cat ~/.bash_history 
-          
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Run process print Task (Shell Script)
+        run: |
+          chmod +x kill_process.sh 
+          ./kill_process.sh
+
+      - name: Remove listener
+        run: ./config.sh remove --token BLRU5KI5XXX6SEKFMOEQ5EDHYFXXX
+        working-directory: /home/ubuntu/actions-runner
           
       # - name: ENV Variable
       #   run:  |
