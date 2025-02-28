@@ -13,7 +13,7 @@ jobs:
   C:
     runs-on: self-hosted
     steps:
-      - run: echo "Job C running" && sleep 3
+      - run: echo "Job C running" && sleep 4
        
       - name: Checkout code
         uses: actions/checkout@v3
