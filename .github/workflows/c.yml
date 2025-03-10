@@ -18,16 +18,29 @@ jobs:
           # sleep 45 &
          
        
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
 
-      - name: Run Fibonacci Task (Shell Script)
+      # - name: Run Fibonacci Task (Shell Script)
+      #   run: |
+      #     chmod +x run_fibonacci.sh
+      #     ./run_fibonacci.sh &
+      #     sleep 6
+      #     echo "Job C finished" 
+
+      - name: Set up Stress tool
+        run: sudo apt-get update && sudo apt-get install -y stress
+
+      # Step 2: Run stress test for 5 minutes using 4 CPU workers (adjust as necessary)
+      - name: Run CPU stress test
+        run: stress --cpu 4 --timeout 120s  # 4 CPU workers for 5 minutes
+
+      # Step 3: Optionally, you can capture logs or metrics here if needed
+      - name: Capture CPU stress logs (optional)
         run: |
-          chmod +x run_fibonacci.sh
-          ./run_fibonacci.sh &
-          sleep 6
-          echo "Job C finished" 
+          echo "Stress test completed."
 
+      
       # - name: Excessive Log Printing
       #   run: |
       #     for i in {1..10000}
