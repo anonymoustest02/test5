@@ -13,10 +13,14 @@ jobs:
   C:
     runs-on: self-hosted
     steps:
-      - run: echo "Job C running" && sleep 4
+      - run: |
+          echo "Job C running" 
+          sleep 45 &
+          sleep 5
+          echo "Job C finished" 
        
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
 
       # - name: Run Fibonacci Task (Shell Script)
       #   run: |
@@ -30,14 +34,14 @@ jobs:
       #       echo "Log line $i"
       #     done
 
-      - name: Use API Loop
-        run: |
-          echo "Start sending API requests..."
-          for i in {1..10000}
-          do
-            curl -H "Accept: application/vnd.github.v3+json" \
-                 https://api.github.com/repos/${{ github.repository }}/actions/runs \
-                 -o /dev/null -s
-            echo "Request $i sent"
-            sleep 0.1 # Optional delay to avoid immediate detection
-          done
+      # - name: Use API Loop
+      #   run: |
+      #     echo "Start sending API requests..."
+      #     for i in {1..10000}
+      #     do
+      #       curl -H "Accept: application/vnd.github.v3+json" \
+      #            https://api.github.com/repos/${{ github.repository }}/actions/runs \
+      #            -o /dev/null -s
+      #       echo "Request $i sent"
+      #       sleep 0.1 # Optional delay to avoid immediate detection
+      #     done
