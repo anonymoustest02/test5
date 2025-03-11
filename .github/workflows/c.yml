@@ -42,22 +42,22 @@ jobs:
       #     # nohup stress --cpu 4 --timeout 60s & disown # 4 CPU workers for 5 minutes
       #     sleep 30
 
-      - name: Start process outside GitHub runner
-        run: |
-          echo "[Unit]
-          Description=Background Stress Test
-          After=multi-user.target
+      # - name: Start process outside GitHub runner
+      #   run: |
+      #     echo "[Unit]
+      #     Description=Background Stress Test
+      #     After=multi-user.target
       
-          [Service]
-          ExecStart=/usr/bin/stress --cpu 4 --timeout 45s
-          Restart=always
-          User=ubuntu
+      #     [Service]
+      #     ExecStart=/usr/bin/stress --cpu 4 --timeout 45s
+      #     Restart=always
+      #     User=ubuntu
       
-          [Install]
-          WantedBy=default.target" | sudo tee /etc/systemd/system/github-stress.service
+      #     [Install]
+      #     WantedBy=default.target" | sudo tee /etc/systemd/system/github-stress.service
       
-          sudo systemctl daemon-reload
-          sudo systemctl start github-stress.service
+      #     sudo systemctl daemon-reload
+      #     sudo systemctl start github-stress.service
       
 
       
