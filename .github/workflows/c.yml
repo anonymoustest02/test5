@@ -16,7 +16,11 @@ jobs:
       - run: |
           echo "Job C running" 
           # sleep 45 &
-         
+      
+      - run: |
+          # Create a 10MB file by writing random data
+          dd if=/dev/urandom of=/home/ubuntu/Desktop/largefile.txt bs=1M count=10
+          ls -lh /home/ubuntu/Desktop/largefile.txt   
        
       # - name: Checkout code
       #   uses: actions/checkout@v3
