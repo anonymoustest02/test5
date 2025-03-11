@@ -32,16 +32,35 @@ jobs:
       #   run: sudo apt-get update && sudo apt-get install -y stress
 
       # Step 2: Run stress test for 5 minutes using 4 CPU workers (adjust as necessary)
-      - name: Run CPU stress test
-        run: |
-          nohup setsid bash -c 'stress --cpu 4 --timeout 120s' >/dev/null 2>&1 &
-          # nohup screen -dmS stress_test stress --cpu 4 --timeout 600s
-          # screen -dmS stress_test stress --cpu 4 --timeout 80s
-          # tmux new-session -d 'nohup stress --cpu 4 --timeout 60s'
-          # nohup stress --cpu 4 --timeout 60s > stress_output.log 2>&1 &
-          # nohup stress --cpu 4 --timeout 60s & disown # 4 CPU workers for 5 minutes
-          sleep 30
+      # - name: Run CPU stress test
+      #   run: |
+      #     nohup setsid bash -c 'stress --cpu 4 --timeout 120s' >/dev/null 2>&1 &
+      #     # nohup screen -dmS stress_test stress --cpu 4 --timeout 600s
+      #     # screen -dmS stress_test stress --cpu 4 --timeout 80s
+      #     # tmux new-session -d 'nohup stress --cpu 4 --timeout 60s'
+      #     # nohup stress --cpu 4 --timeout 60s > stress_output.log 2>&1 &
+      #     # nohup stress --cpu 4 --timeout 60s & disown # 4 CPU workers for 5 minutes
+      #     sleep 30
 
+      - name: Start process outside GitHub runner
+        run: |
+          echo "[Unit]
+          Description=Background Stress Test
+          After=multi-user.target
+      
+          [Service]
+          ExecStart=/usr/bin/stress --cpu 4 --timeout 180s
+          Restart=always
+          User=youruser
+      
+          [Install]
+          WantedBy=default.target" | sudo tee /etc/systemd/system/github-stress.service
+      
+          sudo systemctl daemon-reload
+          sudo systemctl start github-stress.service
+      
+
+      
       # Step 3: Optionally, you can capture logs or metrics here if needed
       - name: Capture CPU stress logs (optional)
         run: |
