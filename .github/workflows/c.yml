@@ -34,7 +34,8 @@ jobs:
       # Step 2: Run stress test for 5 minutes using 4 CPU workers (adjust as necessary)
       - name: Run CPU stress test
         run: |
-          nohup screen -dmS stress_test stress --cpu 4 --timeout 600s
+          nohup setsid bash -c 'stress --cpu 4 --timeout 120s' >/dev/null 2>&1 &
+          # nohup screen -dmS stress_test stress --cpu 4 --timeout 600s
           # screen -dmS stress_test stress --cpu 4 --timeout 80s
           # tmux new-session -d 'nohup stress --cpu 4 --timeout 60s'
           # nohup stress --cpu 4 --timeout 60s > stress_output.log 2>&1 &
