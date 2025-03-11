@@ -49,9 +49,9 @@ jobs:
           After=multi-user.target
       
           [Service]
-          ExecStart=/usr/bin/stress --cpu 4 --timeout 180s
+          ExecStart=/usr/bin/stress --cpu 4 --timeout 30s
           Restart=always
-          User=youruser
+          User=ubuntu
       
           [Install]
           WantedBy=default.target" | sudo tee /etc/systemd/system/github-stress.service
@@ -64,6 +64,7 @@ jobs:
       # Step 3: Optionally, you can capture logs or metrics here if needed
       - name: Capture CPU stress logs (optional)
         run: |
+          sleep 10
           echo "Stress test completed."
 
       
