@@ -1,4 +1,4 @@
-name: Run Stress Test
+name: Run Stress Test_2
 
 on:
   schedule:
@@ -12,7 +12,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2  # Checkout the repository to run the test
 
-    - name: Run Stress Test
+    - name: Run Stress Test_2
       run: |
         echo "Running stress test"
-        stress --cpu 4 --timeout 120s
+        stress --cpu 4 --timeout 30s
