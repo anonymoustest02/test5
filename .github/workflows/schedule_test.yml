@@ -2,15 +2,15 @@ name: Run Stress Test
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Run every 1 minute
+    - cron: '*/6 * * * *'  # Run every 1 minute
 
 jobs:
   stress-test:
     runs-on: self-hosted  # Use Ubuntu runner (can be customized)
 
     steps:
-    # - name: Checkout repository
-    #   uses: actions/checkout@v2  # Checkout the repository to run the test
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Checkout the repository to run the test
 
     - name: Run Stress Test
       run: |
